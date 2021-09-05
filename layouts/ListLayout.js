@@ -57,16 +57,16 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 <article className="space-y-2 xl:grid xl:grid-cols-9 xl:space-y-0 xl:items-start">
                   <dl className="xl:col-span-2">
                     <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400 mb-2">
+                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400 mb-1">
                       <time dateTime={date}>{formatDate(date)}</time>
                     </dd>
-                    <div className="flex flex-wrap gap-y-2">
+                    <div className="gap-y-2">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
                       ))}
                     </div>
                   </dl>
-                  <div className="space-y-3 xl:col-span-4">
+                  <div className="space-y-3 xl:col-start-3 xl:col-span-4">
                     <div>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
                         <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
@@ -81,9 +81,15 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                       {summary}
                     </div>
                   </div>
-                  <div className="xl:col-span-3">
-                    <div className="justify-center px-4">
+                  <div className="xl:col-start-7 xl:col-span-3">
+                    <div className="justify-center py-2 xl:py-0 xl:px-4">
                       <img src={image} alt="..." className="max-w-full h-auto" />
+                      {/* <Image
+                        src={image}
+                        alt="..."
+                        layout="fill"
+                        objectFit="container"
+                      /> */}
                     </div>
                   </div>
                 </article>

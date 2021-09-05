@@ -36,7 +36,7 @@ export default function Home({ posts }) {
                   <div className="space-y-2 xl:grid xl:grid-cols-9 xl:space-y-0 ">
                     <dl className="xl:col-span-2">
                       <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400 xl:mb-6">
+                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400 mb-2 xl:mb-6">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                       <div className="flex flex-wrap gap-y-2 xl:grid-cols-2">
@@ -72,7 +72,7 @@ export default function Home({ posts }) {
                       </div>
                     </div>
                     <div className="xl:col-span-3">
-                      <div className="justify-center px-4">
+                      <div className="justify-center py-2 xl:py-0 xl:px-4">
                         <img src={image} alt="..." className="max-w-full h-auto" />
                       </div>
                     </div>

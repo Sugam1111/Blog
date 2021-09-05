@@ -1,6 +1,6 @@
 ---
 name: Gurleen Singh
-avatar: /static/images/gurleen-avatar.jpg
+avatar: /static/images/gurleen.jpg
 occupation: PhD Student
 company: University of Auckland
 twitter: https://twitter.com/gurleen

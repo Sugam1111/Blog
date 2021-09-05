@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'The Neural Code',
   author: 'Sugam Budhraja',
-  headerTitle: 'NeuralCode',
+  headerTitle: 'The Neural Code',
   description: 'A blog about Brain and Machine Intelligence',
   language: 'en-us',
   siteUrl: 'https://neuralco.de',
