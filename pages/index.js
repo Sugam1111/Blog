@@ -67,9 +67,9 @@ export default function Home({ posts }) {
                         <dl className="">
                           <dt className="sr-only">Authors</dt>
                           <dd>
-                            <ul className="flex space-x-3">
+                            <ul className="flex space-x-2">
                               {authors.map((author) => (
-                                <li className="shadow rounded-full mr-2 text-xs inline-flex items-center pl-1 pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-yellow-500 dark:border-black dark:border-opacity-5 dark:bg-opacity-10 dark:hover:bg-opacity-20 dark:hover:text-primary-400 flex items-center space-x-2" key={author}>
+                                <li className="shadow rounded-full text-xs inline-flex items-center pl-1 pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-yellow-500 dark:border-black dark:border-opacity-5 dark:bg-opacity-10 dark:hover:bg-opacity-20 dark:hover:text-primary-400 flex items-center space-x-2" key={author}>
                                   <Image
                                     src={`/static/avatars/${author}.jpg`}
                                     width="38px"
