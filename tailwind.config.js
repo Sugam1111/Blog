@@ -7,8 +7,15 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+         'neural-code': "url('/static/images/neural-code.jpg')",
+         'stars': "url('/static/images/stars.jpg')",
+      },
       spacing: {
         '9/16': '56.25%',
+      },
+      zIndex: {
+       '-10': '-10',
       },
       lineHeight: {
         11: '2.75rem',
@@ -20,8 +27,11 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.pink,
+        secondary: colors.yellow,
         gray: colors.trueGray,
+        rose: colors.rose,
+        purple: colors.purple,
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
@@ -36,9 +46,10 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.primary.600'),
+              textDecoration: 'none',
               '&:hover': {
-                color: theme('colors.primary.600'),
+                color: theme('colors.primary.800'),
               },
               code: { color: theme('colors.primary.400') },
             },
@@ -60,8 +71,8 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             code: {
-              color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.gray.100'),
+              color: theme('colors.purple.700'),
+              // backgroundColor: theme('colors.gray.700'),
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
@@ -101,7 +112,8 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.yellow.500'),
+              textDecoration: 'none',
               '&:hover': {
                 color: theme('colors.primary.400'),
               },
@@ -125,6 +137,7 @@ module.exports = {
               color: theme('colors.gray.100'),
             },
             code: {
+              color: theme('colors.pink.500'),
               backgroundColor: theme('colors.gray.800'),
             },
             details: {

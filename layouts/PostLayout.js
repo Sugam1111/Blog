@@ -4,6 +4,7 @@ import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import Image from '@/components/Image'
 import Tag from '@/components/Tag'
+import SocialIcon from '@/components/social-icons'
 import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
 
@@ -26,13 +27,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         {...frontMatter}
       />
       <article>
-        <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+        <div className="shadow-md rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-black dark:border-opacity-10 dark:bg-black dark:bg-opacity-30">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
               <dl className="space-y-10">
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <dd className="text-base font-medium leading-6 text-gray-700 dark:text-gray-300">
                     <time dateTime={date}>
                       {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
                     </time>
@@ -45,13 +46,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </div>
           </header>
           <div
-            className="pb-8 divide-y divide-gray-200 xl:divide-y-0 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6"
+            className="pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <dl className="pt-6 pb-10 xl:pt-11 xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
+            <dl className="pt-6 pb-10 xl:pt-11 xl:border-gray-200 xl:dark:border-gray-700">
               <dt className="sr-only">Authors</dt>
               <dd>
-                <ul className="flex justify-center space-x-8 xl:block sm:space-x-12 xl:space-x-0 xl:space-y-8">
+                <ul className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-black dark:bg-opacity-30 flex justify-center space-x-8 xl:block sm:space-x-12 xl:space-x-0 xl:space-y-8">
                   {authorDetails.map((author) => (
                     <li className="flex items-center space-x-2" key={author.name}>
                       {author.avatar && (
@@ -60,7 +61,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                           width="38px"
                           height="38px"
                           alt="avatar"
-                          className="w-10 h-10 rounded-full"
+                          className="w-10 h-10 rounded-md"
                         />
                       )}
                       <dl className="text-sm font-medium leading-5 whitespace-nowrap">
@@ -71,11 +72,23 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                           {author.twitter && (
                             <Link
                               href={author.twitter}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              className="text-primary-600 hover:text-primary-800 dark:text-yellow-500 dark:hover:text-pink-400"
                             >
                               {author.twitter.replace('https://twitter.com/', '@')}
                             </Link>
                           )}
+                          {/* {author.email && (
+                            <SocialIcon kind="mail" href={`mailto:${author.email}`} size="5" />
+                          )}
+                          {author.github && (
+                            <SocialIcon kind="github" href={`mailto:${author.github}`} size="5" />
+                          )}
+                          {author.linkedin && (
+                            <SocialIcon kind="linkedin" href={`mailto:${author.linkedin}`} size="5" />
+                          )}
+                          {author.twitter && (
+                            <SocialIcon kind="twitter" href={`mailto:${author.twitter}`} size="5" />
+                          )} */}
                         </dd>
                       </dl>
                     </li>
@@ -83,25 +96,25 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 </ul>
               </dd>
             </dl>
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
-              <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
-              <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(slug)} rel="nofollow">
+            <div className="xl:pb-0 xl:col-span-3 xl:row-span-2">
+              <div className="xl:mt-10 shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-black dark:bg-opacity-30 pb-8 prose text-gray-700 dark:prose-dark dark:text-gray-300 max-w-none">{children}</div>
+              <div className="px-5 pt-6 pb-6 space-x-1 text-sm text-gray-700 dark:text-gray-300">
+                <Link href={discussUrl(slug)} rel="nofollow" className="hover:text-black dark:hover:text-gray-100">
                   {'Discuss on Twitter'}
                 </Link>
-                {` • `}
-                <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
+                <Link>{` • `}</Link>
+                <Link href={editUrl(fileName)} className="hover:text-black dark:hover:text-gray-100">{'View on GitHub'}</Link>
               </div>
               <Comments frontMatter={frontMatter} />
             </div>
             <footer>
-              <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
+              <div className="text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2">
                 {tags && (
-                  <div className="py-4 xl:py-8">
-                    <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400 mb-1.5">
+                  <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-black dark:bg-opacity-30 ">
+                    <h2 className="text-xs tracking-wide text-gray-700 uppercase dark:text-gray-300 mb-1.5">
                       Tags
                     </h2>
-                    <div className="flex flex-wrap gap-y-2">
+                    <div className="flex flex-wrap">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
                       ))}
@@ -109,23 +122,23 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   </div>
                 )}
                 {(next || prev) && (
-                  <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+                  <div className="flex justify-between space-x-4 xl:space-x-0 py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                      <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-black dark:bg-opacity-30 ">
+                        <h2 className="text-xs tracking-wide text-gray-700 uppercase dark:text-gray-300">
                           Previous Article
                         </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <div className="text-primary-600 hover:text-primary-800 dark:text-yellow-500 dark:hover:text-pink-400">
                           <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
                         </div>
                       </div>
                     )}
                     {next && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                      <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-black dark:bg-opacity-30 ">
+                        <h2 className="text-xs tracking-wide text-gray-700 uppercase dark:text-gray-300">
                           Next Article
                         </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <div className="text-primary-600 hover:text-primary-800 dark:text-yellow-500 dark:hover:text-pink-400">
                           <Link href={`/blog/${next.slug}`}>{next.title}</Link>
                         </div>
                       </div>
@@ -136,7 +149,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <div className="pt-4 xl:pt-8">
                 <Link
                   href="/blog"
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   &larr; Back to the blog
                 </Link>
