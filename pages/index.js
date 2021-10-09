@@ -18,9 +18,9 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="shadow-md rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-black dark:border-opacity-10 dark:bg-black dark:bg-opacity-30 ">
+      <div className="shadow-md dark:shadow-wt-md rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-gray-900 dark:border-opacity-10 dark:bg-gray-900 dark:bg-opacity-10 ">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className=" drop-shadow-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className=" drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
           </h1>
           <p className="text-lg leading-7 text-gray-700 dark:text-gray-300">
@@ -37,14 +37,14 @@ export default function Home({ posts }) {
             return (
               <li key={slug} className="py-5">
                 <article>
-                  <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-black dark:bg-opacity-30 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
+                  <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-gray-600 dark:border-opacity-10 dark:bg-gray-600 dark:bg-opacity-30 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
                     <dl className="space-y-5 xl:col-span-3">
                       {/* <dt className="sr-only">Published on</dt> */}
                       <dd className="text-base font-medium px-2 text-gray-700 dark:text-gray-300">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                       <div className="justify-center">
-                        <img src={image} alt="..." className="w-full xl:w-4/5 h-auto rounded-md border border-white border-opacity-10" />
+                        <img src={image} alt="..." className="w-full xl:w-4/5 h-auto rounded-md border border-white border-opacity-10 dark:border-gray-600 dark:border-opacity-10" />
                       </div>
                     </dl>
                     <div className="space-y-5 xl:col-span-5">
@@ -69,7 +69,7 @@ export default function Home({ posts }) {
                           <dd>
                             <ul className="flex space-x-2">
                               {authors.map((author) => (
-                                <li className="shadow rounded-full text-xs inline-flex items-center pl-1 pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-yellow-500 dark:border-black dark:border-opacity-5 dark:bg-opacity-10 dark:hover:bg-opacity-20 dark:hover:text-primary-400 flex items-center space-x-2" key={author}>
+                                <li className="shadow rounded-full text-xs inline-flex items-center pl-1 pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-secondary-400 dark:border-gray-700 dark:border-opacity-5 dark:bg-gray-100 dark:bg-opacity-10 dark:hover:bg-opacity-20 dark:hover:text-secondary-300 flex items-center space-x-2" key={author}>
                                   <Image
                                     src={`/static/avatars/${author}.jpg`}
                                     width="38px"
