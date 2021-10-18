@@ -30,6 +30,9 @@ module.exports = {
       backgroundImage: {
          'neural-code': "url('/static/images/neural-code.jpg')",
          'stars': "url('/static/images/stars.jpg')",
+         'mac-os': "url('/static/images/mac-os.jpg')",
+         'mac-os-light': "url('/static/images/mac-os-light.jpg')",
+         'light-gradient': "url('/static/images/light-gradient.jpg')"
       },
       spacing: {
         '9/16': '56.25%',
@@ -47,11 +50,11 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.pink,
+        primary: colors.violet,
         secondary: colors.yellow,
         gray: colors.trueGray,
         rose: colors.rose,
-        purple: colors.purple,
+        fuchsia: colors.fuchsia,
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
@@ -91,8 +94,8 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             code: {
-              color: theme('colors.purple.700'),
-              // backgroundColor: theme('colors.gray.700'),
+              color: theme('colors.pink.400'),
+              backgroundColor: theme('colors.gray.700'),
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
