@@ -5,6 +5,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
+import kebabCase from '@/lib/utils/kebabCase'
 
 const MAX_DISPLAY = 5
 
@@ -69,6 +70,7 @@ export default function Home({ posts }) {
                           <dd>
                             <ul className="flex space-x-2">
                               {authors.map((author) => (
+                                <Link  href={`/authors/${kebabCase(author)}`} >
                                 <li className="shadow rounded-full text-xs inline-flex items-center pl-1 pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-secondary-400 dark:border-gray-700 dark:border-opacity-5 dark:bg-gray-100 dark:bg-opacity-10 dark:hover:bg-opacity-20 dark:hover:text-secondary-300 flex items-center space-x-2" key={author}>
                                   <Image
                                     src={`/static/avatars/${author}.jpg`}
@@ -87,6 +89,7 @@ export default function Home({ posts }) {
                                     )}</dd>
                                   </dl>
                                 </li>
+                                </Link>
                               ))}
                             </ul>
                           </dd>
