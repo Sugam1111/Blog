@@ -6,6 +6,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import kebabCase from '@/lib/utils/kebabCase'
+import Hero from '@/components/Hero'
 
 const MAX_DISPLAY = 5
 
@@ -19,6 +20,7 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <Hero/>
       <div className="shadow-md dark:shadow-wt-md rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-gray-900 dark:border-opacity-10 dark:bg-gray-900 dark:bg-opacity-10 ">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h1 className=" drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">

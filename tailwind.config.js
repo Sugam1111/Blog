@@ -30,9 +30,11 @@ module.exports = {
       backgroundImage: {
          'neural-code': "url('/static/images/neural-code.jpg')",
          'stars': "url('/static/images/stars.jpg')",
-         'mac-os': "url('/static/images/mac-os.jpg')",
+         'mac-os-dark': "url('/static/images/mac-os-dark.jpg')",
          'mac-os-light': "url('/static/images/mac-os-light.jpg')",
-         'light-gradient': "url('/static/images/light-gradient.jpg')"
+         'mac-os-lava': "url('/static/images/mac-os-lava.jpg')",
+         'mac-os-sand': "url('/static/images/mac-os-sand.jpg')",
+         'light-gradient': "url('/static/images/light-gradient.jpg')",
       },
       spacing: {
         '9/16': '56.25%',
