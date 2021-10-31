@@ -46,20 +46,24 @@ export default function Home({ posts }) {
                       <dd className="text-base font-medium px-2 text-gray-700 dark:text-gray-300">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
-                      <div className="flex flex-wrap gap-y-2 xl:grid-cols-2">
-                        {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
-                        ))}
+                      <div className="justify-center">
+                        <img
+                          src={image}
+                          alt="..."
+                          className="w-full xl:w-4/5 h-auto rounded-md border border-white border-opacity-10 dark:border-gray-600 dark:border-opacity-10"
+                        />
                       </div>
                     </dl>
-                    <div className="space-y-5 xl:col-span-4">
+                    <div className="space-y-5 xl:col-span-5">
                       <div className="space-y-6">
+                        <div className="flex flex-wrap gap-y-1">
+                          {tags.map((tag) => (
+                            <Tag key={tag} text={tag} />
+                          ))}
+                        </div>
                         <div>
                           <h2 className="text-2xl font-bold leading-5 tracking-tight text-light-title dark:text-dark-title">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
+                            <Link href={`/blog/${slug}`} className="">
                               {title}
                             </Link>
                           </h2>
@@ -105,7 +109,7 @@ export default function Home({ posts }) {
                           {summary}
                         </div>
                       </div>
-                      <div className="text-base font-medium leading-6">
+                      {/* <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
                           className="text-primary hover:text-primary-dark dark:hover:text-primary-dark"
@@ -113,12 +117,7 @@ export default function Home({ posts }) {
                         >
                           Read more &rarr;
                         </Link>
-                      </div>
-                    </div>
-                    <div className="xl:col-span-3">
-                      <div className="justify-center py-2 xl:py-0 xl:px-4">
-                        <img src={image} alt="..." className="max-w-full h-auto" />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </article>
