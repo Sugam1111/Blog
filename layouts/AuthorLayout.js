@@ -1,7 +1,7 @@
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import kebabCase from '@/lib/utils/kebabCase'
-import Link from '@/lib/components/Link'
+import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 
 export default function AuthorLayout({ children, frontMatter }) {
