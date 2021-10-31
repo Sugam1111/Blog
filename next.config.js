@@ -6,6 +6,7 @@ module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
+    ignoreDuringBuilds: true,
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
   experimental: { esmExternals: true },
