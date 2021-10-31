@@ -5,6 +5,8 @@ import Hero from '@/components/Hero'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
+import kebabCase from '@/lib/utils/kebabCase'
+import Image from '@/components/Image'
 
 const MAX_DISPLAY = 5
 
