@@ -53,18 +53,22 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
             let { slug, date, title, authors, summary, tags, image } = frontMatter
-            authors = (authors || ['sugam-budhraja'])
+            authors = authors || ['sugam-budhraja']
             return (
               <li key={slug} className="py-4">
                 <article>
-                <div className="rounded-xl p-5 bg-light-card dark:bg-dark-card space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
+                  <div className="rounded-xl p-5 bg-light-card dark:bg-dark-card space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
                     <dl className="space-y-5 xl:col-span-3">
                       {/* <dt className="sr-only">Published on</dt> */}
                       <dd className="text-base font-medium px-2 text-gray-700 dark:text-gray-300">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                       <div className="justify-center">
-                        <img src={image} alt="..." className="w-full xl:w-4/5 h-auto rounded-md border border-white border-opacity-10 dark:border-gray-600 dark:border-opacity-10" />
+                        <img
+                          src={image}
+                          alt="..."
+                          className="w-full xl:w-4/5 h-auto rounded-md border border-white border-opacity-10 dark:border-gray-600 dark:border-opacity-10"
+                        />
                       </div>
                     </dl>
                     <div className="space-y-5 xl:col-span-5">
@@ -76,10 +80,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         </div>
                         <div>
                           <h2 className="text-2xl font-bold leading-5 tracking-tight text-light-title dark:text-dark-title">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className=""
-                            >
+                            <Link href={`/blog/${slug}`} className="">
                               {title}
                             </Link>
                           </h2>
@@ -89,25 +90,33 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                           <dd>
                             <ul className="flex space-x-2">
                               {authors.map((author) => (
-                                <Link  href={`/authors/${kebabCase(author)}`} >
-                                <li className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2" key={author}>
-                                  <Image
-                                    src={`/static/avatars/${author}.jpg`}
-                                    width="38px"
-                                    height="38px"
-                                    alt="avatar"
-                                    className="w-10 h-10 rounded-lg"
-                                  />
-                                  <dl className="text-sm font-medium leading-5">
-                                    <dt className="sr-only">Name</dt>
-                                    <dd className="">{author.split('-').join(" ").replace(
-                                      /\w\S*/g,
-                                      function(txt) {
-                                        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-                                      }
-                                    )}</dd>
-                                  </dl>
-                                </li>
+                                <Link href={`/authors/${kebabCase(author)}`}>
+                                  <li
+                                    className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2"
+                                    key={author}
+                                  >
+                                    <Image
+                                      src={`/static/avatars/${author}.jpg`}
+                                      width="38px"
+                                      height="38px"
+                                      alt="avatar"
+                                      className="w-10 h-10 rounded-lg"
+                                    />
+                                    <dl className="text-sm font-medium leading-5">
+                                      <dt className="sr-only">Name</dt>
+                                      <dd className="">
+                                        {author
+                                          .split('-')
+                                          .join(' ')
+                                          .replace(/\w\S*/g, function (txt) {
+                                            return (
+                                              txt.charAt(0).toUpperCase() +
+                                              txt.substr(1).toLowerCase()
+                                            )
+                                          })}
+                                      </dd>
+                                    </dl>
+                                  </li>
                                 </Link>
                               ))}
                             </ul>

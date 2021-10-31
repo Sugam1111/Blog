@@ -1,6 +1,7 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
+import Hero from '@/components/Hero'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
@@ -17,7 +18,7 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <Hero/>
+      <Hero />
       <div className="">
         <div className="pt-6 pb-6 grid-cols-8 space-y-2 md:space-y-5">
           <h1 className="w-auto inline-block drop-shadow-lg col-span-1 text-3xl font-extrabold leading-9 tracking-tight dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-red-ct dark:to-primary sm:text-4xl sm:leading-10 md:text-6xl md:leading-snug">
@@ -63,25 +64,33 @@ export default function Home({ posts }) {
                           <dd>
                             <ul className="flex space-x-2">
                               {authors.map((author) => (
-                                <Link  href={`/authors/${kebabCase(author)}`} >
-                                <li className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2" key={author}>
-                                  <Image
-                                    src={`/static/avatars/${author}.jpg`}
-                                    width="38px"
-                                    height="38px"
-                                    alt="avatar"
-                                    className="w-10 h-10 rounded-lg"
-                                  />
-                                  <dl className="text-sm font-medium leading-5">
-                                    <dt className="sr-only">Name</dt>
-                                    <dd className="">{author.split('-').join(" ").replace(
-                                      /\w\S*/g,
-                                      function(txt) {
-                                        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-                                      }
-                                    )}</dd>
-                                  </dl>
-                                </li>
+                                <Link href={`/authors/${kebabCase(author)}`}>
+                                  <li
+                                    className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2"
+                                    key={author}
+                                  >
+                                    <Image
+                                      src={`/static/avatars/${author}.jpg`}
+                                      width="38px"
+                                      height="38px"
+                                      alt="avatar"
+                                      className="w-10 h-10 rounded-lg"
+                                    />
+                                    <dl className="text-sm font-medium leading-5">
+                                      <dt className="sr-only">Name</dt>
+                                      <dd className="">
+                                        {author
+                                          .split('-')
+                                          .join(' ')
+                                          .replace(/\w\S*/g, function (txt) {
+                                            return (
+                                              txt.charAt(0).toUpperCase() +
+                                              txt.substr(1).toLowerCase()
+                                            )
+                                          })}
+                                      </dd>
+                                    </dl>
+                                  </li>
                                 </Link>
                               ))}
                             </ul>

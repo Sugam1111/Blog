@@ -1,5 +1,7 @@
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
+import kebabCase from '@/lib/utils/kebabCase'
+import Link from '@/lib/components/Link'
 import { PageSEO } from '@/components/SEO'
 
 export default function AuthorLayout({ children, frontMatter }) {
@@ -25,10 +27,12 @@ export default function AuthorLayout({ children, frontMatter }) {
           </div>
         </div>
         <div className="xl:px-3 xl:col-span-3">
-          <Link  href={`/authors/${kebabCase(name)}`} >
+          <Link href={`/authors/${kebabCase(name)}`}>
             <h2 className="pt-6 pb-4 text-3xl font-bold leading-8 tracking-tight">{name}</h2>
           </Link>
-          <div className="pb-4 text-lg font-medium text-gray-900 dark:text-primary">{occupation}, {company}</div>
+          <div className="pb-4 text-lg font-medium text-gray-900 dark:text-primary">
+            {occupation}, {company}
+          </div>
           <div className="prose dark:prose-dark max-w-none">{children}</div>
         </div>
       </div>

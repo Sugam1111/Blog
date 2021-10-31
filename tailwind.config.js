@@ -7,19 +7,22 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      boxShadow: {  
+      boxShadow: {
         'wt-sm': '0 1px 2px 0 rgba(255, 255, 255, 0.05)',
-        'wt': '0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06)',
-        'wt-md': '0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06)',
-        'wt-lg': '0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05)',
-        'wt-xl': '0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04)',
+        wt: '0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06)',
+        'wt-md':
+          '0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06)',
+        'wt-lg':
+          '0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05)',
+        'wt-xl':
+          '0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04)',
         'wt-2xl': '0 25px 50px -12px rgba(255, 255, 255, 0.25)',
         'wt-3xl': '0 35px 60px -15px rgba(255, 255, 255, 0.3)',
         'wt-inner': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.06)',
       },
       dropShadow: {
         'wt-sm': '0 1px 1px rgba(255, 255, 255, 0.05)',
-        'wt': '0 1px 2px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(255, 255, 255, 0.06)',
+        wt: '0 1px 2px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(255, 255, 255, 0.06)',
         'wt-md': '0 4px 3px rgba(255, 255, 255, 0.07), 0 2px 2px rgba(255, 255, 255, 0.06)',
         'wt-lg': '0 10px 8px rgba(255, 255, 255, 0.04), 0 4px 3px rgba(255, 255, 255, 0.1)',
         'wt-xl': '0 20px 13px rgba(255, 255, 255, 0.03), 0 8px 5px rgba(255, 255, 255, 0.08)',
@@ -28,11 +31,11 @@ module.exports = {
         'wt-inner': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.06)',
       },
       backgroundImage: {
-         'neural-code': "url('/static/images/neural-code.jpg')",
-         'stars': "url('/static/images/stars.jpg')",
-         'texture-light': "url('https://www.transparenttextures.com/patterns/foggy-bird.png')",
-         'texture-dark': "url('https://www.transparenttextures.com/patterns/clean-textile.png')",
-         'light-gradient': "url('/static/images/light-gradient.jpg')",
+        'neural-code': "url('/static/images/neural-code.jpg')",
+        stars: "url('/static/images/stars.jpg')",
+        'texture-light': "url('https://www.transparenttextures.com/patterns/foggy-bird.png')",
+        'texture-dark': "url('https://www.transparenttextures.com/patterns/clean-textile.png')",
+        'light-gradient': "url('/static/images/light-gradient.jpg')",
       },
       backgroundColor: {
         primary: '#e14eca',

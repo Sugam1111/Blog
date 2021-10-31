@@ -55,40 +55,49 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <dd>
                 <ul className="flex justify-center space-x-2">
                   {authorDetails.map((author) => (
-                    <Link  href={`/authors/${kebabCase(author)}`} >
-                    <li className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2" key={author}>
-                      <Image
-                        src={author.avatar}
-                        width="38px"
-                        height="38px"
-                        alt="avatar"
-                        className="w-10 h-10 rounded-lg"
-                      />
-                      <dl className="text-sm font-medium leading-5">
-                        <dt className="sr-only">Name</dt>
-                        <dd className="">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
-                        <dd>
-                          {author.twitter && (
-                            <Link
-                              href={author.twitter}
-                              className="text-primary hover:text-primary-dark dark:text-secondary dark:hover:text-secondary-hover"
-                            >
-                              {author.twitter.replace('https://twitter.com/', '@')}
-                            </Link>
-                          )}
-                        </dd>
-                      </dl>
-                    </li>
+                    <Link href={`/authors/${kebabCase(author)}`}>
+                      <li
+                        className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2"
+                        key={author}
+                      >
+                        <Image
+                          src={author.avatar}
+                          width="38px"
+                          height="38px"
+                          alt="avatar"
+                          className="w-10 h-10 rounded-lg"
+                        />
+                        <dl className="text-sm font-medium leading-5">
+                          <dt className="sr-only">Name</dt>
+                          <dd className="">{author.name}</dd>
+                          <dt className="sr-only">Twitter</dt>
+                          <dd>
+                            {author.twitter && (
+                              <Link
+                                href={author.twitter}
+                                className="text-primary hover:text-primary-dark dark:text-secondary dark:hover:text-secondary-hover"
+                              >
+                                {author.twitter.replace('https://twitter.com/', '@')}
+                              </Link>
+                            )}
+                          </dd>
+                        </dl>
+                      </li>
                     </Link>
                   ))}
                 </ul>
               </dd>
             </dl>
             <div className="xl:pb-0 xl:col-span-4 xl:row-span-2">
-              <div className="xl:mt-10 rounded-xl p-5 xl:p-8 bg-light-card dark:bg-dark-card pb-8 prose text-gray-700 dark:prose-dark dark:text-gray-300 max-w-none">{children}</div>
+              <div className="xl:mt-10 rounded-xl p-5 xl:p-8 bg-light-card dark:bg-dark-card pb-8 prose text-gray-700 dark:prose-dark dark:text-gray-300 max-w-none">
+                {children}
+              </div>
               <div className="px-5 xl:px-8 pt-6 pb-6 space-x-1 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(slug)} rel="nofollow" className="hover:text-black dark:hover:text-gray-100">
+                <Link
+                  href={discussUrl(slug)}
+                  rel="nofollow"
+                  className="hover:text-black dark:hover:text-gray-100"
+                >
                   {'Discuss on Twitter'}
                 </Link>
                 {` • `}
