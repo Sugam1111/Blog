@@ -30,7 +30,7 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p> */}
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        <ul className="">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             let { slug, date, title, authors, summary, image, tags } = frontMatter
@@ -38,7 +38,7 @@ export default function Home({ posts }) {
               authors = ['sugam-budhraja']
             }
             return (
-              <li key={slug} className="py-12">
+              <li key={slug} className="py-6">
                 <article>
                   <div className="rounded-xl p-5 bg-light-card dark:bg-dark-card space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
                     <dl className="space-y-5 xl:col-span-3">
