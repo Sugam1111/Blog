@@ -17,14 +17,15 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest
+      <Hero/>
+      <div className="">
+        <div className="pt-6 pb-6 grid-cols-8 space-y-2 md:space-y-5">
+          <h1 className="w-auto inline-block drop-shadow-lg col-span-1 text-3xl font-extrabold leading-9 tracking-tight dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-red-ct dark:to-primary sm:text-4xl sm:leading-10 md:text-6xl md:leading-snug">
+            Latest Posts
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          {/* <p className="text-lg leading-7 text-gray-700 dark:text-gray-300">
             {siteMetadata.description}
-          </p>
+          </p> */}
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
@@ -33,10 +34,10 @@ export default function Home({ posts }) {
             return (
               <li key={slug} className="py-12">
                 <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-9 xl:space-y-0 ">
-                    <dl className="xl:col-span-2">
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400 mb-2 xl:mb-6">
+                  <div className="rounded-xl p-5 bg-light-card dark:bg-dark-card space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
+                    <dl className="space-y-5 xl:col-span-3">
+                      {/* <dt className="sr-only">Published on</dt> */}
+                      <dd className="text-base font-medium px-2 text-gray-700 dark:text-gray-300">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                       <div className="flex flex-wrap gap-y-2 xl:grid-cols-2">
@@ -48,7 +49,7 @@ export default function Home({ posts }) {
                     <div className="space-y-5 xl:col-span-4">
                       <div className="space-y-6">
                         <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                          <h2 className="text-2xl font-bold leading-5 tracking-tight text-light-title dark:text-dark-title">
                             <Link
                               href={`/blog/${slug}`}
                               className="text-gray-900 dark:text-gray-100"
@@ -57,14 +58,43 @@ export default function Home({ posts }) {
                             </Link>
                           </h2>
                         </div>
-                        <div className="prose text-gray-500 max-w-none dark:text-gray-400">
+                        <dl className="">
+                          <dt className="sr-only">Authors</dt>
+                          <dd>
+                            <ul className="flex space-x-2">
+                              {authors.map((author) => (
+                                <Link  href={`/authors/${kebabCase(author)}`} >
+                                <li className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2" key={author}>
+                                  <Image
+                                    src={`/static/avatars/${author}.jpg`}
+                                    width="38px"
+                                    height="38px"
+                                    alt="avatar"
+                                    className="w-10 h-10 rounded-lg"
+                                  />
+                                  <dl className="text-sm font-medium leading-5">
+                                    <dt className="sr-only">Name</dt>
+                                    <dd className="">{author.split('-').join(" ").replace(
+                                      /\w\S*/g,
+                                      function(txt) {
+                                        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                                      }
+                                    )}</dd>
+                                  </dl>
+                                </li>
+                                </Link>
+                              ))}
+                            </ul>
+                          </dd>
+                        </dl>
+                        <div className="prose max-w-none text-gray-700 dark:text-gray-300">
                           {summary}
                         </div>
                       </div>
                       <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                          className="text-primary hover:text-primary-dark dark:hover:text-primary-dark"
                           aria-label={`Read "${title}"`}
                         >
                           Read more &rarr;
@@ -87,7 +117,7 @@ export default function Home({ posts }) {
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            className="text-primary hover:text-primary-dark dark:hover:text-primary-dark"
             aria-label="all posts"
           >
             All Posts &rarr;
