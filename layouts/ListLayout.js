@@ -92,7 +92,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                               {authors.map((author) => (
                                 <Link href={`/authors/${kebabCase(author)}`}>
                                   <li
-                                    className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2"
+                                    className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary transition delay-100 hover:bg-light-hover dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2"
                                     key={author}
                                   >
                                     <Image

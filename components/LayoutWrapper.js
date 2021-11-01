@@ -6,8 +6,10 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import { useRouter } from 'next/router'
 
 const LayoutWrapper = ({ children }) => {
+  const router = useRouter()
   return (
     <SectionContainer>
       <div className="flex flex-col justify-between h-screen">
@@ -30,15 +32,25 @@ const LayoutWrapper = ({ children }) => {
           </div>
           <div className="flex items-center text-base leading-5">
             <div className="hidden sm:block">
-              {headerNavLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className="p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
-                >
-                  {link.title}
-                </Link>
-              ))}
+              {headerNavLinks.map((link) =>
+                link.href === router.pathname ? (
+                  <Link
+                    key={link.title}
+                    href={link.href}
+                    className="rounded-lg p-1 font-bold text-gray-900 sm:py-2 sm:px-4 transition delay-100 hover:bg-light-hover dark:text-white dark:hover:bg-primary dark:hover:text-dark-bg"
+                  >
+                    {link.title}
+                  </Link>
+                ) : (
+                  <Link
+                    key={link.title}
+                    href={link.href}
+                    className="rounded-lg p-1 font-medium text-gray-700 sm:py-2 sm:px-4 transition delay-100 hover:bg-light-hover dark:text-gray-300 dark:hover:bg-primary dark:hover:text-dark-bg"
+                  >
+                    {link.title}
+                  </Link>
+                )
+              )}
             </div>
             <ThemeSwitch />
             <MobileNav />

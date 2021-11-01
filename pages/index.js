@@ -40,86 +40,86 @@ export default function Home({ posts }) {
             return (
               <li key={slug} className="py-6">
                 <article>
-                  <div className="rounded-xl p-5 bg-light-card dark:bg-dark-card space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
-                    <dl className="space-y-5 xl:col-span-3">
-                      {/* <dt className="sr-only">Published on</dt> */}
-                      <dd className="text-base font-medium px-2 text-gray-700 dark:text-gray-300">
-                        <time dateTime={date}>{formatDate(date)}</time>
-                      </dd>
-                      <div className="justify-center">
-                        <img
-                          src={image}
-                          alt="..."
-                          className="w-full xl:w-4/5 h-auto rounded-md border border-white border-opacity-10 dark:border-gray-600 dark:border-opacity-10"
-                        />
-                      </div>
-                    </dl>
-                    <div className="space-y-5 xl:col-span-5">
-                      <div className="space-y-6">
-                        <div className="flex flex-wrap gap-y-1">
-                          {tags.map((tag) => (
-                            <Tag key={tag} text={tag} />
-                          ))}
+                  <Link href={`/blog/${slug}`} className="">
+                    <div className="rounded-xl p-5 bg-light-card dark:bg-dark-card space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
+                      <dl className="space-y-5 xl:col-span-3">
+                        {/* <dt className="sr-only">Published on</dt> */}
+                        <dd className="text-base font-medium px-2 text-gray-700 dark:text-gray-300">
+                          <time dateTime={date}>{formatDate(date)}</time>
+                        </dd>
+                        <div className="justify-center">
+                          <img
+                            src={image}
+                            alt="..."
+                            className="w-full xl:w-4/5 h-auto rounded-md border border-white border-opacity-10 dark:border-gray-600 dark:border-opacity-10"
+                          />
                         </div>
-                        <div>
-                          <h2 className="text-2xl font-bold leading-5 tracking-tight text-light-title dark:text-dark-title">
-                            <Link href={`/blog/${slug}`} className="">
+                      </dl>
+                      <div className="space-y-5 xl:col-span-5">
+                        <div className="space-y-6">
+                          <div className="flex flex-wrap gap-y-1">
+                            {tags.map((tag) => (
+                              <Tag key={tag} text={tag} />
+                            ))}
+                          </div>
+                          <div>
+                            <h2 className="text-2xl font-bold leading-5 tracking-tight text-light-title dark:text-dark-title">
                               {title}
-                            </Link>
-                          </h2>
+                            </h2>
+                          </div>
+                          <dl className="">
+                            <dt className="sr-only">Authors</dt>
+                            <dd>
+                              <ul className="flex space-x-2">
+                                {authors.map((author) => (
+                                  <Link href={`/authors/${kebabCase(author)}`}>
+                                    <li
+                                      className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary transition delay-100 hover:bg-light-hover dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2"
+                                      key={author}
+                                    >
+                                      <Image
+                                        src={`/static/avatars/${author}.jpg`}
+                                        width="38px"
+                                        height="38px"
+                                        alt="avatar"
+                                        className="w-10 h-10 rounded-lg"
+                                      />
+                                      <dl className="text-sm font-medium leading-5">
+                                        <dt className="sr-only">Name</dt>
+                                        <dd className="">
+                                          {author
+                                            .split('-')
+                                            .join(' ')
+                                            .replace(/\w\S*/g, function (txt) {
+                                              return (
+                                                txt.charAt(0).toUpperCase() +
+                                                txt.substr(1).toLowerCase()
+                                              )
+                                            })}
+                                        </dd>
+                                      </dl>
+                                    </li>
+                                  </Link>
+                                ))}
+                              </ul>
+                            </dd>
+                          </dl>
+                          <div className="prose max-w-none text-gray-700 dark:text-gray-300">
+                            {summary}
+                          </div>
                         </div>
-                        <dl className="">
-                          <dt className="sr-only">Authors</dt>
-                          <dd>
-                            <ul className="flex space-x-2">
-                              {authors.map((author) => (
-                                <Link href={`/authors/${kebabCase(author)}`}>
-                                  <li
-                                    className="rounded-xl text-xs inline-flex items-center pl-1 pr-2 py-1 text-light-title dark:text-primary hover:bg-light-bg dark:hover:bg-primary dark:hover:text-dark-bg flex items-center space-x-2"
-                                    key={author}
-                                  >
-                                    <Image
-                                      src={`/static/avatars/${author}.jpg`}
-                                      width="38px"
-                                      height="38px"
-                                      alt="avatar"
-                                      className="w-10 h-10 rounded-lg"
-                                    />
-                                    <dl className="text-sm font-medium leading-5">
-                                      <dt className="sr-only">Name</dt>
-                                      <dd className="">
-                                        {author
-                                          .split('-')
-                                          .join(' ')
-                                          .replace(/\w\S*/g, function (txt) {
-                                            return (
-                                              txt.charAt(0).toUpperCase() +
-                                              txt.substr(1).toLowerCase()
-                                            )
-                                          })}
-                                      </dd>
-                                    </dl>
-                                  </li>
-                                </Link>
-                              ))}
-                            </ul>
-                          </dd>
-                        </dl>
-                        <div className="prose max-w-none text-gray-700 dark:text-gray-300">
-                          {summary}
-                        </div>
+                        {/* <div className="text-base font-medium leading-6">
+                          <Link
+                            href={`/blog/${slug}`}
+                            className="rounded-md px-2 py-1 font-medium text-2xl text-black hover:bg-light-hover dark:text-primary dark:hover:text-dark-bg dark:hover:primary"
+                            aria-label={`Read "${title}"`}
+                          >
+                            &rarr;
+                          </Link>
+                        </div> */}
                       </div>
-                      {/* <div className="text-base font-medium leading-6">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-primary hover:text-primary-dark dark:hover:text-primary-dark"
-                          aria-label={`Read "${title}"`}
-                        >
-                          Read more &rarr;
-                        </Link>
-                      </div> */}
                     </div>
-                  </div>
+                  </Link>
                 </article>
               </li>
             )

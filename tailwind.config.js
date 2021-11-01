@@ -49,6 +49,7 @@ module.exports = {
         'light-card': '#ffffff',
         'light-title': '#1d253b',
         'muted-dark': '#6c757d',
+        'light-hover': '#dee1e6',
         'blue-ct': '#5e72e4',
         'indigo-ct': '#5603ad',
         'purple-ct': '#8965e0',
@@ -88,6 +89,7 @@ module.exports = {
         'dark-title': '#ffffff',
         'dark-subtitle': '#9a9a9a',
         'muted-dark': '#6c757d',
+        'light-hover': '#dee1e6',
         'blue-ct': '#5e72e4',
         'indigo-ct': '#5603ad',
         'purple-ct': '#8965e0',
@@ -239,6 +241,7 @@ module.exports = {
   },
   variants: {
     typography: ['dark'],
+    fontWeight: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }
