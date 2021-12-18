@@ -4,16 +4,19 @@ import { PageSEO } from '@/components/SEO'
 export default function AuthorLayout({ children }) {
   return (
     <>
-      <PageSEO title={`About - ${siteMetadata.author}`} description={`About me - ${siteMetadata.author}`} />
-      <div className="shadow-md dark:shadow-wt-md rounded-xl border border-white border-opacity-10 pt-5 pb-10 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-gray-900 dark:border-opacity-10 dark:bg-gray-900 dark:bg-opacity-10 ">
+      <PageSEO
+        title={`About - ${siteMetadata.author}`}
+        description={`About me - ${siteMetadata.author}`}
+      />
+      <div className="shadow-md dark:shadow-md rounded-xl border border-white border-opacity-10 pt-5 pb-10 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50 ">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="inline-block drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-primary-ct dark:to-red-ct sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             About
           </h1>
           <p className="text-lg leading-7 text-gray-700 dark:text-gray-300">
             {siteMetadata.summary}
           </p>
-          <h1 className="pt-6 drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="inline-block pt-6 drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-purple-400 dark:to-blue-400 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Authors
           </h1>
         </div>

@@ -57,6 +57,32 @@ module.exports = {
         gray: colors.trueGray,
         rose: colors.rose,
         fuchsia: colors.fuchsia,
+        'primary-ct': '#e14eca',
+        'primary-dark': '#c221a9',
+        'secondary-ct': '#f4f5f7',
+        'dark-border': '#e3e3e3',
+        'light-bg': '#f5f6fa',
+        'dark-bg': '#1e1e2f',
+        'dark-card': '#27293d',
+        'dark-card-light': '#525f7f',
+        'light-card': '#ffffff',
+        'light-title': '#1d253b',
+        'dark-title': '#ffffff',
+        'dark-subtitle': '#9a9a9a',
+        'muted-dark': '#6c757d',
+        'light-hover': '#dee1e6',
+        'blue-ct': '#5e72e4',
+        'indigo-ct': '#5603ad',
+        'purple-ct': '#8965e0',
+        'pink-ct': '#efa3e3',
+        'baby-pink-ct': '#f3a4b5',
+        'pink-light-ct': '#f7cdf0',
+        'red-ct': '#f5365c',
+        'orange-ct': '#fb6340',
+        'yellow-ct': '#ffd600',
+        'green-ct': '#2dce89',
+        'teal-ct': '#11cdef',
+        'cyan-ct': '#2bffc6',
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
@@ -76,7 +102,12 @@ module.exports = {
               '&:hover': {
                 color: theme('colors.primary.800'),
               },
-              code: { color: theme('colors.primary.400') },
+              code: {
+                color: theme('colors.pink.400'),
+                '&:hover': {
+                  color: theme('colors.primary.800'),
+                },
+              },
             },
             h1: {
               fontWeight: '700',
@@ -96,8 +127,8 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             code: {
-              color: theme('colors.pink.400'),
-              backgroundColor: theme('colors.gray.700'),
+              color: theme('colors.pink.500'),
+              // backgroundColor: theme('colors.gray.200'),
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
@@ -137,12 +168,17 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.secondary.400'),
+              color: theme('colors.primary.500'),
               textDecoration: 'none',
               '&:hover': {
-                color: theme('colors.secondary.300'),
+                color: theme('colors.primary.400'),
               },
-              code: { color: theme('colors.primary.400') },
+              code: {
+                color: theme('colors.pink.500'),
+                '&:hover': {
+                  color: theme('colors.primary.400'),
+                },
+              },
             },
             h1: {
               fontWeight: '700',

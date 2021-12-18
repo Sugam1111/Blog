@@ -27,7 +27,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         {...frontMatter}
       />
       <article>
-        <div className="shadow-md dark:shadow-wt-md rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-gray-900 dark:border-opacity-10 dark:bg-gray-900 dark:bg-opacity-10">
+        <div className="shadow-md dark:shadow-md rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
               <dl className="space-y-10">
@@ -52,7 +52,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <dl className="pt-6 pb-10 xl:pt-11 xl:border-gray-200 xl:dark:border-gray-700">
               <dt className="sr-only">Authors</dt>
               <dd>
-                <ul className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-gray-600 dark:bg-opacity-30 flex justify-center space-x-8 xl:block sm:space-x-12 xl:space-x-0 xl:space-y-8">
+                <ul className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-dark-card-light dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 flex justify-center space-x-8 xl:block sm:space-x-12 xl:space-x-0 xl:space-y-8">
                   {authorDetails.map((author) => (
                     <li className="flex items-center space-x-2" key={author.name}>
                       {author.avatar && (
@@ -72,7 +72,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                           {author.twitter && (
                             <Link
                               href={author.twitter}
-                              className="text-primary-600 hover:text-primary-800 dark:text-secondary-400 dark:hover:text-secondary-300"
+                              className="text-primary-600 hover:text-primary-800 dark:text-primary-ct dark:hover:text-primary-ct"
                             >
                               {author.twitter.replace('https://twitter.com/', '@')}
                             </Link>
@@ -97,7 +97,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </dd>
             </dl>
             <div className="xl:pb-0 xl:col-span-3 xl:row-span-2">
-              <div className="xl:mt-10 shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-gray-600 dark:bg-opacity-30 pb-8 prose text-gray-700 dark:prose-dark dark:text-gray-300 max-w-none">{children}</div>
+              <div className="xl:mt-10 shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-dark-card-light dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 pb-8 prose text-gray-700 dark:prose-dark dark:text-gray-300 max-w-none">{children}</div>
               <div className="px-5 pt-6 pb-6 space-x-1 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(slug)} rel="nofollow" className="hover:text-black dark:hover:text-gray-100">
                   {'Discuss on Twitter'}
@@ -110,7 +110,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <footer>
               <div className="text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2">
                 {tags && (
-                  <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-gray-600 dark:bg-opacity-30 ">
+                  <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-dark-card-light dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 ">
                     <h2 className="text-xs tracking-wide text-gray-700 uppercase dark:text-gray-300 mb-1.5">
                       Tags
                     </h2>
@@ -124,21 +124,21 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 {(next || prev) && (
                   <div className="flex justify-between space-x-4 xl:space-x-0 py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && (
-                      <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-gray-600 dark:bg-opacity-30 ">
+                      <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-dark-card-light dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 ">
                         <h2 className="text-xs tracking-wide text-gray-700 uppercase dark:text-gray-300">
                           Previous Article
                         </h2>
-                        <div className="text-primary-600 hover:text-primary-800 dark:text-secondary-400 dark:hover:text-secondary-300">
+                        <div className="text-primary-600 hover:text-primary-800 dark:text-primary-ct dark:hover:text-primary-ct">
                           <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
                         </div>
                       </div>
                     )}
                     {next && (
-                      <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-black dark:border-opacity-10 dark:bg-gray-600 dark:bg-opacity-30 ">
+                      <div className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-dark-card-light dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 ">
                         <h2 className="text-xs tracking-wide text-gray-700 uppercase dark:text-gray-300">
                           Next Article
                         </h2>
-                        <div className="text-primary-600 hover:text-primary-800 dark:text-secondary-400 dark:hover:text-secondary-300">
+                        <div className="text-primary-600 hover:text-primary-800 dark:text-primary-ct dark:hover:text-primary-ct">
                           <Link href={`/blog/${next.slug}`}>{next.title}</Link>
                         </div>
                       </div>
