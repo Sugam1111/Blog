@@ -7,40 +7,48 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      boxShadow: {  
-        'wt-sm': '0 1px 2px 0 rgba(255, 255, 255, 0.05)',
-        'wt': '0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06)',
-        'wt-md': '0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06)',
-        'wt-lg': '0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05)',
-        'wt-xl': '0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04)',
-        'wt-2xl': '0 25px 50px -12px rgba(255, 255, 255, 0.25)',
-        'wt-3xl': '0 35px 60px -15px rgba(255, 255, 255, 0.3)',
+      boxShadow: {
+        'wt-sm': '0 1px 2px rgba(255, 255, 255, 0.05)',
+        wt: '0 1px 3px rgba(255, 255, 255, 0.1)',
+        'wt-md': '0 4px 6px rgba(255, 255, 255, 0.1)',
+        'wt-lg': '0 10px 15px rgba(255, 255, 255, 0.1)',
+        'wt-xl': '0 20px 25px rgba(255, 255, 255, 0.1)',
+        'wt-2xl': '0 25px 50px rgba(255, 255, 255, 0.25)',
+        'wt-3xl': '0 35px 60px rgba(255, 255, 255, 0.3)',
         'wt-inner': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.06)',
       },
       dropShadow: {
         'wt-sm': '0 1px 1px rgba(255, 255, 255, 0.05)',
-        'wt': '0 1px 2px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(255, 255, 255, 0.06)',
-        'wt-md': '0 4px 3px rgba(255, 255, 255, 0.07), 0 2px 2px rgba(255, 255, 255, 0.06)',
-        'wt-lg': '0 10px 8px rgba(255, 255, 255, 0.04), 0 4px 3px rgba(255, 255, 255, 0.1)',
-        'wt-xl': '0 20px 13px rgba(255, 255, 255, 0.03), 0 8px 5px rgba(255, 255, 255, 0.08)',
-        'wt-2xl': '0 25px 25px rgba(255, 255, 255, 0.15)',
+        wt: '0 1px 2px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(255, 255, 255, 0.06)',
+        'wt-md': '0 4px 3px rgba(255, 255, 255, 0.07)',
+        'wt-lg': '0 10px 8px rgba(255, 255, 255, 0.1)',
+        'wt-xl': '0 20px 13px rgba(255, 255, 255, 0.15)',
+        'wt-2xl': '0 25px 25px rgba(255, 255, 255, 0.2)',
         'wt-3xl': '0 35px 35px rgba(255, 255, 255, 0.25)',
         'wt-inner': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.06)',
+        cyan: '0 20px 40px rgba(43, 255, 198, 0.8)',
+        teal: '0 20px 40px rgba(17, 205, 239, 0.8)',
+        pink: '0 20px 40px rgba(239, 163, 227, 0.8)',
+        red: '0 20px 40px rgba(255, 131, 131, 0.8)',
+        orange: '0 20px 40px rgba(251, 99, 64, 0.8)',
+        yellow: '0 20px 40px rgba(255, 214, 0, 0.8)',
+        fuchsia: '0 20px 40px rgba(217, 70, 239, 0.8)',
+        blue: '0 20px 40px rgba(59, 130, 246, 0.8)',
       },
       backgroundImage: {
-         'neural-code': "url('/static/images/neural-code.jpg')",
-         'stars': "url('/static/images/stars.jpg')",
-         'mac-os-dark': "url('/static/images/mac-os-dark.jpg')",
-         'mac-os-light': "url('/static/images/mac-os-light.jpg')",
-         'mac-os-lava': "url('/static/images/mac-os-lava.jpg')",
-         'mac-os-sand': "url('/static/images/mac-os-sand.jpg')",
-         'light-gradient': "url('/static/images/light-gradient.jpg')",
+        'neural-code': "url('/static/images/neural-code.jpg')",
+        stars: "url('/static/images/stars.jpg')",
+        'mac-os-dark': "url('/static/images/mac-os-dark.jpg')",
+        'mac-os-light': "url('/static/images/mac-os-light.jpg')",
+        'mac-os-lava': "url('/static/images/mac-os-lava.jpg')",
+        'mac-os-sand': "url('/static/images/mac-os-sand.jpg')",
+        'light-gradient': "url('/static/images/light-gradient.jpg')",
       },
       spacing: {
         '9/16': '56.25%',
       },
       zIndex: {
-       '-10': '-10',
+        '-10': '-10',
       },
       lineHeight: {
         11: '2.75rem',
@@ -83,6 +91,13 @@ module.exports = {
         'green-ct': '#2dce89',
         'teal-ct': '#11cdef',
         'cyan-ct': '#2bffc6',
+        'blue-dimon': '#0db8ff',
+        'purple-dimon': '#f332ff',
+        'pink-dimon': '#ff43c0',
+        'sun-dimon': '#ffa95c',
+        'orange-dimon': '#ff703e',
+        'yellow-dimon': '#ffec4e',
+        'green-dimon': '#3cff53',
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
@@ -103,7 +118,7 @@ module.exports = {
                 color: theme('colors.primary.800'),
               },
               code: {
-                color: theme('colors.pink.400'),
+                color: theme('colors.pink.500'),
                 '&:hover': {
                   color: theme('colors.primary.800'),
                 },
@@ -127,7 +142,7 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             code: {
-              color: theme('colors.pink.500'),
+              color: theme('colors.pink.400'),
               // backgroundColor: theme('colors.gray.200'),
               paddingLeft: '4px',
               paddingRight: '4px',
@@ -168,15 +183,15 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.primary.400'),
               textDecoration: 'none',
               '&:hover': {
-                color: theme('colors.primary.400'),
+                color: theme('colors.primary.300'),
               },
               code: {
-                color: theme('colors.pink.500'),
+                color: theme('colors.pink.400'),
                 '&:hover': {
-                  color: theme('colors.primary.400'),
+                  color: theme('colors.primary.300'),
                 },
               },
             },
@@ -198,7 +213,7 @@ module.exports = {
               color: theme('colors.gray.100'),
             },
             code: {
-              color: theme('colors.pink.500'),
+              color: theme('colors.pink.400'),
               backgroundColor: theme('colors.gray.800'),
             },
             details: {

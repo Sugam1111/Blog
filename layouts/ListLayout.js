@@ -19,9 +19,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 
   return (
     <>
-      <div className="shadow-md dark:shadow-md rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50">
+      <div className="shadow-md dark:shadow-lg rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="inline-block drop-shadow-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-red-ct dark:to-orange-ct sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="pb-3 inline-block drop-shadow-xl dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-red-ct dark:to-orange-ct sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
           <div className="relative max-w-lg">
@@ -54,7 +54,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             const { slug, date, title, summary, tags, image } = frontMatter
             return (
               <li key={slug} className="py-4">
-                <article className="shadow-lg rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-dark-card-light dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-9 xl:space-y-0 xl:items-start">
+                <article className="shadow-lg dark:shadow-xl rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-dark-card-light dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-9 xl:space-y-0 xl:items-start">
                   <dl className="xl:col-span-2">
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-700 dark:text-gray-300 mb-3 mt-1">

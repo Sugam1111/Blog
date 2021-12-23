@@ -20,10 +20,10 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <Hero/>
-      <div className="shadow-md dark:shadow-md rounded-xl border border-white border-opacity-10 py-5 px-4 sm:px-5 md:px-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50 ">
+      <Hero />
+      <div className="shadow-md dark:shadow-lg rounded-xl border border-white border-opacity-10 py-5 px-4 sm:px-5 md:px-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50 ">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="inline-block drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-red-ct dark:to-primary-ct">
+          <h1 className="inline-block drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-yellow-500 dark:to-primary-ct">
             Latest Posts
           </h1>
           {/* <p className="text-lg leading-7 text-gray-700 dark:text-gray-300">
@@ -40,7 +40,7 @@ export default function Home({ posts }) {
             return (
               <li key={slug} className="py-5">
                 <article>
-                  <div className="shadow-lg rounded-xl p-3 md:p-5 border border-white border-opacity-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-gray-600 dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
+                  <div className="shadow-lg dark:shadow-xl rounded-xl p-3 md:p-5 border border-white border-opacity-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-gray-600 dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
                     <dl className="space-y-5 xl:col-span-3">
                       {/* <dt className="sr-only">Published on</dt> */}
                       <dd className="text-base font-medium px-2 text-gray-700 dark:text-gray-300">
@@ -62,7 +62,7 @@ export default function Home({ posts }) {
                           ))}
                         </div>
                         <div>
-                          <h2 className="text-gray-700 dark:text-gray-200 text-2xl font-bold leading-5 tracking-tight drop-shadow-lg">
+                          <h2 className="text-gray-700 dark:text-gray-200 text-2xl font-bold leading-5 tracking-tight">
                             <Link href={`/blog/${slug}`} className="">
                               {title}
                             </Link>
@@ -74,7 +74,7 @@ export default function Home({ posts }) {
                             <ul className="flex space-x-2">
                               {authors.map((author) => (
                                 <Link  href={`/authors/${kebabCase(author)}`} >
-                                  <li className="shadow dark:shadow-md rounded-full text-xs items-center pl-1 pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-primary-ct dark:border-dark-card-light dark:border-opacity-5 dark:bg-dark-card-light dark:bg-opacity-20 dark:hover:bg-opacity-30 dark:hover:text-primary-ct flex items-center space-x-2" key={author}>
+                                  <li className="shadow dark:shadow-md rounded-full text-xs items-center pl-1 pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-primary-400 dark:border-dark-card-light dark:border-opacity-5 dark:bg-dark-card-light dark:bg-opacity-20 dark:hover:bg-opacity-30 dark:hover:text-primary-300 flex items-center space-x-2" key={author}>
                                     <Image
                                       src={`/static/avatars/${author}.jpg`}
                                       width="38px"
