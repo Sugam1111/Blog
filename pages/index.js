@@ -38,13 +38,13 @@ export default function Home({ posts }) {
               authors = ['sugam-budhraja']
             }
             return (
-              <li key={slug} className="py-3 sm:py-5">
+              <li key={slug} className="py-5">
                 <article>
                   <Link href={`/blog/${slug}`} className="" aria-label={`Read "${title}"`}>
-                    <div className="shadow-lg dark:shadow-xl rounded-xl p-3 md:p-5 border border-white border-opacity-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-gray-600 dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
+                    <div className="shadow-lg dark:shadow-xl rounded-xl p-3 md:p-5 border border-white border-opacity-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-gray-600 dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 px-4 pt-3 pb-4 sm:p-0">
                       <dl className="space-y-3 md:space-y-5 xl:col-span-3">
                         {/* <dt className="sr-only">Published on</dt> */}
-                        <dd className="text-sm md:text-base font-medium px-2 text-gray-700 dark:text-gray-300">
+                        <dd className="text-sm md:text-base font-medium px-1 sm:px-2 text-gray-700 dark:text-gray-300">
                           <time dateTime={date}>{formatDate(date)}</time>
                         </dd>
                         <div className="content-center">
@@ -94,7 +94,7 @@ export default function Home({ posts }) {
                             </ul>
                           </dd>
                         </dl>
-                        <div className="prose-p text-sm sm:text-md max-w-none text-gray-700 dark:text-gray-300">
+                        <div className="prose-p text-sm sm:prose sm:text max-w-none text-gray-700 dark:text-gray-300">
                           {summary}
                         </div>
                       </div>
