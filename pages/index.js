@@ -22,7 +22,7 @@ export default function Home({ posts }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
       <div className="shadow-md dark:shadow-lg rounded-xl border border-white border-opacity-10 pt-4 pb-4 md:py-5 px-4 md:px-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50 ">
-        <div className="pt-1 pb-2 sm:pt-6 sm:pb-8 space-y-2 md:space-y-5">
+        <div className="pt-2 pb-3 sm:pt-6 sm:pb-8 space-y-3 md:space-y-5">
           <h1 className="inline-block drop-shadow-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-yellow-500 dark:to-primary-ct">
             Latest Posts
           </h1>
@@ -42,7 +42,7 @@ export default function Home({ posts }) {
                 <article>
                   <Link href={`/blog/${slug}`} className="" aria-label={`Read "${title}"`}>
                     <div className="shadow-lg dark:shadow-xl rounded-xl p-3 md:p-5 border border-white border-opacity-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-gray-600 dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
-                      <dl className="space-y-2 md:space-y-5 xl:col-span-3">
+                      <dl className="space-y-3 md:space-y-5 xl:col-span-3">
                         {/* <dt className="sr-only">Published on</dt> */}
                         <dd className="text-xs md:text-base font-medium px-2 text-gray-700 dark:text-gray-300">
                           <time dateTime={date}>{formatDate(date)}</time>
@@ -55,14 +55,14 @@ export default function Home({ posts }) {
                           />
                         </div>
                       </dl>
-                      <div className="space-y-2 md:space-y-5 xl:col-span-5">
+                      <div className="space-y-3 md:space-y-5 xl:col-span-5">
                         <div className="flex flex-wrap gap-y-1">
                           {tags.map((tag) => (
                             <Tag key={tag} text={tag} />
                           ))}
                         </div>
                         <div>
-                          <h2 className="drop-shadow-md text-gray-800 dark:text-gray-100 text-lg sm:text-2xl font-bold leading-5 tracking-tight">
+                          <h2 className="drop-shadow-md text-gray-800 dark:text-gray-100 text-xl sm:text-2xl font-bold leading-5 tracking-tight">
                             {title}
                           </h2>
                         </div>
@@ -76,9 +76,9 @@ export default function Home({ posts }) {
                                     <img
                                       src={`/static/avatars/${author}.jpg`}
                                       alt="avatar"
-                                      className="w-7 h-7 sm:w-10 sm:h-10 rounded-full"
+                                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
                                     />
-                                    <dl className="text-xs sm:text-sm font-medium leading-5">
+                                    <dl className="text-xsm sm:text-sm font-medium leading-5">
                                       <dt className="sr-only">Name</dt>
                                       <dd className="">{author.split('-').join(" ").replace(
                                         /\w\S*/g,
@@ -94,7 +94,7 @@ export default function Home({ posts }) {
                             </ul>
                           </dd>
                         </dl>
-                        <div className="prose-p text-xs sm:text-md max-w-none text-gray-700 dark:text-gray-300">
+                        <div className="prose-p text-sm sm:text-md max-w-none text-gray-700 dark:text-gray-300">
                           {summary}
                         </div>
                       </div>

@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        xxs: '0.6rem',
+        xxs: '0.7rem',
+        xsm: '0.8rem',
       },
       boxShadow: {
         'wt-sm': '0 1px 2px rgba(255, 255, 255, 0.05)',
