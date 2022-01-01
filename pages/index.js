@@ -44,7 +44,7 @@ export default function Home({ posts }) {
                     <div className="shadow-lg dark:shadow-xl rounded-xl p-3 md:p-5 border border-white border-opacity-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-gray-600 dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 ">
                       <dl className="space-y-3 md:space-y-5 xl:col-span-3">
                         {/* <dt className="sr-only">Published on</dt> */}
-                        <dd className="text-xs md:text-base font-medium px-2 text-gray-700 dark:text-gray-300">
+                        <dd className="text-sm md:text-base font-medium px-2 text-gray-700 dark:text-gray-300">
                           <time dateTime={date}>{formatDate(date)}</time>
                         </dd>
                         <div className="content-center">
