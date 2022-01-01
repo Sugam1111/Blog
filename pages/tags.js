@@ -18,7 +18,7 @@ export default function Tags({ tags }) {
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
       <div className="shadow-md dark:shadow-md rounded-xl border border-white border-opacity-10 pt-5 pb-5 pl-10 pr-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50 flex flex-col items-start justify-start md:justify-center md:items-center md:flex-row md:space-x-6 md:mt-24">
         <div className="pt-6 pb-8 space-x-2 md:space-y-5">
-          <h1 className="drop-shadow-lg dark:drop-shadow-wt-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-ct dark:to-blue-dimon sm:text-4xl sm:leading-10 md:text-6xl md:leading-snug md:px-6">
+          <h1 className="drop-shadow-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-ct dark:to-blue-dimon sm:text-4xl sm:leading-10 md:text-6xl md:leading-snug md:px-6">
             Tags
           </h1>
         </div>
