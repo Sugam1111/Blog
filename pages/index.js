@@ -69,7 +69,7 @@ export default function Home({ posts }) {
                         <dl className="">
                           <dt className="sr-only">Authors</dt>
                           <dd>
-                            <ul className="inline-flex sm:flex space-x-1 sm:space-x-2">
+                            <ul className="inline-flex sm:flex space-x-2">
                               {authors.map((author) => (
                                 <Link href={`/authors/${kebabCase(author)}`} >
                                   <li className="shadow dark:shadow-md rounded-full text-xs items-center pl-0.5 pr-1 sm:pl-1 sm:pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-primary-400 dark:border-dark-card-light dark:border-opacity-5 dark:bg-dark-card-light dark:bg-opacity-20 dark:hover:bg-opacity-30 dark:hover:text-primary-300 flex items-center space-x-1 sm:space-x-2" key={author}>
