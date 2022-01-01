@@ -7,6 +7,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontSize: {
+        xxs: '0.6rem',
+      },
       boxShadow: {
         'wt-sm': '0 1px 2px rgba(255, 255, 255, 0.05)',
         wt: '0 1px 3px rgba(255, 255, 255, 0.1)',
@@ -98,6 +101,14 @@ module.exports = {
         'orange-dimon': '#ff703e',
         'yellow-dimon': '#ffec4e',
         'green-dimon': '#3cff53',
+        'pink-grab-1': '#FF5ACD',
+        'yellow-grab-1': '#FBDA61',
+        'green-grab-2': '#2AF598',
+        'blue-grab-2': '#08AEEA',
+        'purple-grab-3': '#B721FF',
+        'blue-grab-3': '#21D4FD',
+        'red-grab-4': '#FF2525',
+        'yellow-grab-4': '#FFE53B',
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',

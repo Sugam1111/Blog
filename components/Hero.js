@@ -9,8 +9,8 @@ export default function Hero({}) {
   return (
     <>
       {/* <PageSEO title={`About - ${name}`} description={`About me - ${name}`} /> */}
-      <div className="items-start h-auto py-10 space-y-2 xl:grid xl:grid-cols-6 xl:grid-rows-6 xl:gap-x-8">
-        <div className="drop-shadow-lg dark:drop-shadow-wt-lg col-span-4 row-span-3 pl-5 text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-ct dark:to-purple-ct">
+      <div className="items-start h-auto pt-5 pb-10 sm:py-10 space-y-2 xl:grid xl:grid-cols-6 xl:grid-rows-6 xl:gap-x-8">
+        <div className="drop-shadow-lg dark:drop-shadow-wt-lg col-span-4 row-span-3 pl-3 sm:pl-5 text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-ct dark:to-purple-ct">
           ML meets Theoretical Neuro
         </div>
         <div className="hidden xl:block col-span-2 row-span-6 pl-2 items-center">
@@ -22,7 +22,7 @@ export default function Hero({}) {
             className="drop-shadow-lg dark:invert dark:drop-shadow-wt-lg dark:fill-purple-300 w-48 h-48 rounded-lg"
           />
         </div>
-        <div className="text-gray-900 dark:text-gray-100 pl-7 text-lg md:text-xl xl:col-span-4 xl:row-span-3">
+        <div className="text-gray-900 dark:text-gray-100 px-4 sm:px-7 text-sm md:text-lg xl:text-xl xl:col-span-4 xl:row-span-3">
           <div>A space where the two fields learn from each other.</div>
           {/* <Link  href={`/authors/${kebabCase(name)}`} >
             <h2 className="drop-shadow-lg dark:drop-shadow-wt-lg pt-6 pb-4 text-3xl font-bold leading-8 tracking-tight">{name}</h2>
