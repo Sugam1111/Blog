@@ -13,13 +13,13 @@ export default function Hero({}) {
         <div className="drop-shadow-lg col-span-4 row-span-3 pl-3 sm:pl-5 text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-ct dark:to-purple-ct">
           ML meets Theoretical Neuro
         </div>
-        <div className="hidden xl:block col-span-2 row-span-6 pl-2 items-center">
+        <div className="hidden xl:block col-span-2 row-span-6 items-center">
           <Image
             src="/static/images/hero.png"
             alt="avatar"
             width="400px"
             height="400px"
-            className="drop-shadow-lg dark:invert dark:fill-purple-300 w-48 h-48 rounded-lg"
+            className="drop-shadow-lg dark:invert w-48 h-48 rounded-lg"
           />
         </div>
         <div className="text-gray-900 dark:text-gray-100 px-4 sm:px-7 text-sm md:text-lg xl:text-xl xl:col-span-4 xl:row-span-3">

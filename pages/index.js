@@ -21,7 +21,7 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
-      <div className="shadow-md dark:shadow-lg rounded-xl border border-white border-opacity-10 pt-4 pb-4 md:py-5 px-4 md:px-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50 ">
+      <div className="shadow-md dark:shadow-lg rounded-xl border border-white border-opacity-10 py-4 md:py-5 px-4 md:px-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50 ">
         <div className="pt-2 pb-3 sm:pt-6 sm:pb-8 space-y-3 md:space-y-5">
           <h1 className="inline-block drop-shadow-lg text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-yellow-500 dark:to-primary-ct">
             Latest Posts
@@ -44,7 +44,7 @@ export default function Home({ posts }) {
                     <div className="shadow-lg dark:shadow-xl rounded-xl p-3 md:p-5 border border-white border-opacity-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-gray-600 dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-8 xl:space-y-0 px-4 pt-3 pb-4 sm:p-0">
                       <dl className="space-y-3 md:space-y-5 xl:col-span-3">
                         {/* <dt className="sr-only">Published on</dt> */}
-                        <dd className="text-sm md:text-base font-medium px-1 sm:px-2 text-gray-700 dark:text-gray-300">
+                        <dd className="text-xsm sm:text-sm md:text-base font-medium px-1 sm:px-2 text-gray-700 dark:text-gray-300">
                           <time dateTime={date}>{formatDate(date)}</time>
                         </dd>
                         <div className="content-center">
@@ -72,7 +72,7 @@ export default function Home({ posts }) {
                             <ul className="inline-flex sm:flex space-x-2">
                               {authors.map((author) => (
                                 <Link href={`/authors/${kebabCase(author)}`} >
-                                  <li className="shadow dark:shadow-md rounded-full text-xs items-center pl-0.5 pr-1 sm:pl-1 sm:pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-primary-400 dark:border-dark-card-light dark:border-opacity-5 dark:bg-dark-card-light dark:bg-opacity-20 dark:hover:bg-opacity-30 dark:hover:text-primary-300 flex items-center space-x-1 sm:space-x-2" key={author}>
+                                  <li className="shadow dark:shadow-md rounded-full text-xs items-center pl-0.5 pr-1 sm:pl-1 sm:pr-2 py-0.5 bg-white bg-opacity-30 border border-white border-opacity-10 text-primary-600 hover:text-primary-800 hover:bg-opacity-50 dark:text-primary-400 dark:border-dark-card-light dark:border-opacity-5 dark:bg-dark-card-light dark:bg-opacity-20 dark:hover:bg-opacity-25 dark:hover:text-primary-300 flex items-center space-x-1 sm:space-x-2" key={author}>
                                     <img
                                       src={`/static/avatars/${author}.jpg`}
                                       alt="avatar"

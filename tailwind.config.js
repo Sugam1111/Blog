@@ -11,6 +11,9 @@ module.exports = {
         xxs: '0.7rem',
         xsm: '0.84rem',
       },
+      backgroundOpacity: {
+        15: '0.15',
+      },
       boxShadow: {
         'wt-sm': '0 1px 2px rgba(255, 255, 255, 0.05)',
         wt: '0 1px 3px rgba(255, 255, 255, 0.1)',
