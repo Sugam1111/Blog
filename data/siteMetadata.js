@@ -3,6 +3,7 @@ const siteMetadata = {
   author: 'Sugam Budhraja',
   headerTitle: 'The Neural Code',
   description: 'A blog about Brain and Machine Intelligence',
+  summary: 'The Neural Code is blog focused on the convergence of Artificial Intelligence and Neuroscience. We review and discuss newfangled concepts, cutting-edge research and state-of-art technologies. Join us on a journey to find the explanation for the brain works and how we can take advantage of theories in neuroscience to improve the current-state of AI. ',
   language: 'en-us',
   siteUrl: 'https://neuralco.de',
   siteRepo: 'https://github.com/Sugam1111/Blog',

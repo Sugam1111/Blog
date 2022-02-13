@@ -1,21 +1,32 @@
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { getFileBySlug } from '@/lib/mdx'
+import AboutLayout from '@/layouts/AboutLayout'
+import { getFilesBySlug } from '@/lib/mdx'
 
 const DEFAULT_LAYOUT = 'AuthorLayout'
 
 export async function getStaticProps() {
-  const authorDetails = await getFileBySlug('authors', ['sugam-budhraja'])
+  const authorDetails = await getFilesBySlug('authors', ['sugam-budhraja', 'gurleen-singh'])
   return { props: { authorDetails } }
 }
 
 export default function About({ authorDetails }) {
-  const { mdxSource, frontMatter } = authorDetails
 
   return (
-    <MDXLayoutRenderer
-      layout={frontMatter.layout || DEFAULT_LAYOUT}
-      mdxSource={mdxSource}
-      frontMatter={frontMatter}
-    />
+    <AboutLayout>
+      <ul className="space-y-8">
+      {authorDetails.map((author) => { 
+        return (
+          <li>
+            <MDXLayoutRenderer
+              layout={author.frontMatter.layout || DEFAULT_LAYOUT}
+              mdxSource={author.mdxSource}
+              frontMatter={author.frontMatter}
+            />
+          </li>
+        )
+      })}
+      </ul>
+    </AboutLayout>
+    // <AuthorLayout authorDetails={authorDetails} />
   )
 }

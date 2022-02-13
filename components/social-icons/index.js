@@ -16,7 +16,7 @@ const components = {
   twitter: Twitter,
 }
 
-const SocialIcon = ({ kind, href, size = 8 }) => {
+const SocialIcon = ({ kind, href, size = 6, wtcolor = 300 }) => {
   if (!href) return null
 
   const SocialSvg = components[kind]
@@ -30,7 +30,7 @@ const SocialIcon = ({ kind, href, size = 8 }) => {
     >
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`fill-current text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 h-${size} w-${size}`}
+        className={`fill-current drop-shadow-lg dark:drop-shadow-wt-lg text-gray-700 dark:text-gray-${wtcolor} hover:text-gray-900 dark:hover:text-gray-100 h-${size} w-${size}`}
       />
     </a>
   )

@@ -1,6 +1,6 @@
 ---
 name: Sugam Budhraja
-avatar: /static/images/sugam.jpg
+avatar: /static/avatars/sugam-budhraja.jpg
 occupation: PhD student
 company: Auckland University of Technology
 email: budhraja.sugam@gmail.com

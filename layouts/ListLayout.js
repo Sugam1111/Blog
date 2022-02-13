@@ -19,9 +19,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 
   return (
     <>
-      <div className="divide-y">
+      <div className="shadow-md dark:shadow-lg rounded-xl border border-white border-opacity-10 pt-3 pb-8 sm:py-5 px-4 sm:px-10 backdrop-filter backdrop-blur-xl bg-white bg-opacity-10 dark:border-dark-card dark:border-opacity-10 dark:bg-dark-card dark:bg-opacity-50">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="pb-3 inline-block drop-shadow-xl text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-red-ct dark:to-orange-ct sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
           <div className="relative max-w-lg">
@@ -30,10 +30,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search articles"
-              className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-gray-100"
+              className="block w-full rounded-md px-3 sm:px-4 py-1 sm:py-2 text-xsm sm:text text-gray-900 bg-white border border-gray-300 dark:bg-gray-900 dark:border-gray-900 dark:text-gray-200 focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-red-ct dark:focus:border-orange-ct"
             />
             <svg
-              className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
+              className="absolute w-5 h-5 sm:w-5 sm:h-5 text-gray-400 right-2 sm:right-3 top-2 sm:top-3 dark:text-gray-300"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -49,18 +49,18 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           </div>
         </div>
         <ul>
-          {!filteredBlogPosts.length && 'No posts found.'}
+          <div className="pl-1 text-sm sm:text text-gray-700 dark:text-gray-200">{!filteredBlogPosts.length && 'No posts found.'}</div>
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags, image } = frontMatter
             return (
-              <li key={slug} className="py-4">
-                <article className="space-y-2 xl:grid xl:grid-cols-9 xl:space-y-0 xl:items-start">
-                  <dl className="xl:col-span-2">
+              <li key={slug} className="py-3 sm:py-4">
+                <article className="shadow-lg dark:shadow-xl rounded-xl border border-white border-opacity-10 p-5 backdrop-filter backdrop-blur-xl bg-white bg-opacity-30 dark:border-dark-card-light dark:border-opacity-10 dark:bg-dark-card-light dark:bg-opacity-10 space-y-2 xl:grid xl:grid-cols-9 xl:space-y-0 xl:items-start">
+                  <dl className="pb-2 xl:col-span-2">
                     <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400 mb-1">
+                    <dd className="text-xs sm:text-base font-medium pl-0.5 leading-3 sm:leading-6 text-gray-700 dark:text-gray-300 mb-3 mt-1">
                       <time dateTime={date}>{formatDate(date)}</time>
                     </dd>
-                    <div className="gap-y-2">
+                    <div className="gap-y-1">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
                       ))}
@@ -68,7 +68,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   </dl>
                   <div className="space-y-3 xl:col-start-3 xl:col-span-4">
                     <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
+                      <h3 className="text-xl sm:text-2xl font-bold leading-5 sm:leading-8 tracking-tight">
                         <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>
@@ -77,13 +77,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         {authors}
                       </div> */}
                     </div>
-                    <div className="prose text-gray-500 max-w-none dark:text-gray-400">
+                    <div className="prose-p sm:prose text-sm sm:text text-gray-700 max-w-none dark:prose-dark dark:text-gray-300">
                       {summary}
                     </div>
                   </div>
                   <div className="xl:col-start-7 xl:col-span-3">
                     <div className="justify-center py-2 xl:py-0 xl:px-4">
-                      <img src={image} alt="..." className="max-w-full h-auto" />
+                      <img src={image} alt="..." className="max-w-full h-auto rounded-md xl:ml-2" />
                       {/* <Image
                         src={image}
                         alt="..."
