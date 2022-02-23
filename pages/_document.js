@@ -35,7 +35,6 @@ class MyDocument extends Document {
           />
         </Head>
         <body className="antialiased text-black bg-gradient-to-r from-red-100 to-blue-100 dark:bg-gradient-to-r dark:from-dark-bg dark:to-dark-bg dark:text-white">
-        {/* <body className="antialiased text-black bg-mac-os-light dark:bg-mac-os-lava bg-cover bg-fixed dark:text-white"> */}
           <Main />
           <NextScript />
         </body>
